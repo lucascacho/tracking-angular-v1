@@ -1,0 +1,166 @@
+<mat-card class="example-card tabla-datos mx-auto">
+	<mat-card-header>
+		<div mat-card-avatar class="example-header-image"></div>
+		<mat-card-title>Provinter</mat-card-title>
+		<mat-card-subtitle>Logistica & Distribucion </mat-card-subtitle>
+	</mat-card-header>
+	<div class="p-2">
+		<div class="table-responsive rounded bg-info text-center">
+			<section class="titulo bg-info"> Datos de tu pedido </section>
+			<table class="table-sm table-info table-striped mx-auto" style="width: 100% !important;">
+				<tbody>
+					<tr>
+						<th>Nombre</th>
+						<td></td>
+						<td>{{datos.nombre + " "+ datos.apellido}}</td>
+					</tr>
+					<tr>
+						<th>Pedido</th>
+						<td></td>
+						<td>{{datos.pedido}}</td>
+					</tr>
+					<tr>
+						<th>Destino</th>
+						<td></td>
+						<td>{{datos.direccionE}}</td>
+					</tr>
+					<tr>
+						<th>Estado</th>
+						<td></td>
+						<td>{{datos.estado}}</td>
+					</tr>
+					<tr>
+						<th>Fec. Distribucion</th>
+						<td></td>
+						<td>{{datos.fecDistribucion}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- <img mat-card-image src="http://www.provinter.com/images/logo.png" alt="Photo of a Shiba Inu"> -->
+	<hr>
+	<mat-card-content>
+		<div class="m-2">
+			<div class="table-responsive rounded text-center border border-info">
+
+				<section class="titulo bg-info"> Estado de tu pedido </section>
+
+				<p class="text-center my-auto" [ngClass]="{    
+                  'text-success':datos.estado == 'Entregado',
+                  'text-primary':datos.estado == 'Reprogramado',
+                  'text-danger':datos.estado == 'Entrega Fallida'}">
+					{{datos.detalle}}
+				</p>
+			</div>
+
+			<div [hidden]="datos.estado != 'Entrega Fallida' && datos.estado != 'Reprogramado' "
+				class="table-responsive rounded text-center border border-info mt-3">
+
+				<section class="titulo bg-info m"> Detalle </section>
+
+				<p class="text-center my-auto">
+					{{datos.detalle}}
+				</p>
+			</div>
+		</div>
+	</mat-card-content>
+
+
+	<!-- ---------------------------- -->
+	<!-- #docregion states -->
+	<div #stepperRaiz>
+		<mat-horizontal-stepper #stepper labelPosition="bottom" [linear]="false" class="register-stepper">
+			<!-- #docregion label -->
+			<mat-step label="Despachado" [completed]="contEstado > 0" [editable]="false" state=selected>
+			</mat-step>
+			<!-- #enddocregion label -->
+			<mat-step label="Camino C.D." [completed]="contEstado > 1" [editable]="false" state=selected>
+			</mat-step>
+			<mat-step label="En C.D." [completed]="contEstado > 2" [editable]="false" style="background-color: blue;"
+				state=selected>
+			</mat-step>
+			<mat-step label="Camino al destino" [completed]="contEstado > 3" [editable]="false" state=selected>
+			</mat-step>
+			<mat-step #entregado label="Entregado" [completed]="contEstado > 4" [editable]="false" state=selected>
+			</mat-step>
+
+
+
+			<ng-template matStepperIcon="selected">
+				<mat-icon *ngIf="datos.estado != 'Entrega Fallida' && datos.estado != 'Reprogramado' ; else error">
+					local_shipping
+				</mat-icon>
+				<ng-template #error>
+					<mat-icon>error</mat-icon>
+				</ng-template>
+			</ng-template>
+
+			<ng-template matStepperIcon="edit">
+				<mat-icon>where_to_vote</mat-icon>
+			</ng-template>
+
+			<ng-template matStepperIcon="done">
+				<mat-icon>done_all</mat-icon>
+			</ng-template>
+
+		</mat-horizontal-stepper>
+	</div>
+
+	<!-- TEST -->
+
+	<!-- {{stepper.selectedIndex + "-----------"+ contEstado+"--------"+desactivarStepper}}
+	<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="6px">
+		<button mat-raised-button color="accent" (click)="move(0)">1st</button>
+		<button mat-raised-button color="accent" (click)="move(1)">2nd</button>
+		<button mat-raised-button color="accent" (click)="move(2)">3rd</button>
+		<button mat-raised-button color="accent" (click)="move(3)">4th</button>
+		<button mat-raised-button color="accent" (click)="move(4)">5th</button>
+		<button mat-raised-button color="accent" (click)="move(6)">6th</button>
+	</div> -->
+
+
+	<mat-card-actions>
+		<button mat-button>Guardar</button>
+		<button mat-button (click)="print()">Imprimir</button>
+		<button mat-button (click)= "testEstados()">Test</button>
+	</mat-card-actions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mat-card>
+
+
+
+
+
+<!-- #enddocregion override-icons -->
+<!-- #enddocregion states -->
+
+
+
+
+
+
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

@@ -1,0 +1,73 @@
+<!-- #docregion states -->
+<mat-vertical-stepper #stepper labelPosition="bottom" [linear]="false" class="register-stepper">
+	<!-- #docregion label -->
+	<mat-step label="Retiro" [completed]="contEstado > 0" [editable]="false">
+	</mat-step>
+	<!-- #enddocregion label -->
+	<mat-step label="Camino C.D." [completed]="contEstado > 1" [editable]="false">
+	</mat-step>
+	<mat-step label="En C.D." [completed]="contEstado > 2" [editable]="false">
+	</mat-step>
+	<mat-step label="Camino al destino" [completed]="contEstado > 3" [editable]="false">
+	</mat-step>
+	<mat-step label="Entregado" [completed]="contEstado > 4" [editable]="false">
+	</mat-step>
+
+
+	<!-- <ng-template class="form-control" matStepLabel>Basic</ng-template> -->
+	<!-- <ng-template matStepperIcon="minus">
+    <mat-icon>remove</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="plus">
+    <mat-icon>add</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="user">
+    <mat-icon>account_circle</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="camion">
+    <mat-icon>account_circle</mat-icon>
+  </ng-template> -->
+	<!-- <ng-template matStepperIcon="end">
+		<mat-icon>check_box</mat-icon>
+	</ng-template> -->
+
+	<!-- <ng-template matStepperIcon="edit">
+		<mat-icon>check_box</mat-icon>
+	</ng-template> -->
+
+	<ng-template matStepperIcon="selected">
+		<mat-icon>local_shipping</mat-icon>
+	</ng-template>
+
+	<ng-template matStepperIcon="edit">
+		<mat-icon>where_to_vote</mat-icon>
+	</ng-template>
+
+	<ng-template matStepperIcon="done">
+		<mat-icon>done_all</mat-icon>
+	</ng-template>
+
+	<!-- Custom icon with a context variable. -->
+	<!-- <ng-template matStepperIcon="number" let-index="index">
+		{{index + 10}}
+	</ng-template> -->
+
+	<!-- Icon overrides. -->
+	<!-- #docregion override-icons -->
+</mat-vertical-stepper>
+{{stepper.selectedIndex + "-----------"+ contEstado+"--------"+desactivarStepper}}
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="6px">
+	<button mat-raised-button color="accent" (click)="move(0)">1st</button>
+	<button mat-raised-button color="accent" (click)="move(1)">2nd</button>
+	<button mat-raised-button color="accent" (click)="move(2)">3rd</button>
+	<button mat-raised-button color="accent" (click)="move(3)">4th</button>
+	<button mat-raised-button color="accent" (click)="move(4)">5th</button>
+</div>
+
+
+<!-- #enddocregion override-icons -->
+<!-- #enddocregion states -->
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

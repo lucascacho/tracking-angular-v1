@@ -1,0 +1,24 @@
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #5cb85c;
+}
+::ng-deep .mat-step-header .mat-step-icon-state-done {
+  background-color: #5bc0de;
+}
+
+::ng-deep
+  .mat-step-header
+  .mat-stepper-horizontal
+  .mat-stepper-horizontal-line {
+  background-color: #5bc0de;
+  border-top-color: #5bc0de;
+}
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}

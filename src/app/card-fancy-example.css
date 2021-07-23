@@ -1,0 +1,69 @@
+.example-card {
+  max-width: 900px;
+}
+
+.example-header-image {
+  background-image: url("https://lh3.googleusercontent.com/dx3uWQmA10kbZZjVBHcF2bNFbqCR_SBszSAq0Il0TNGNNrE0vNdY_pi3pY8z11Ppq9_a1aBe_BbFKtrm2D_-wosPEFpVeI4s0kJ9I5ZNoIRAhscPFocr9G1m5NtzIlC5kAKbqA78BvcEMSr6k6kZDL4nqz3wBdiObxzkOoxfKqtq0TLj8P7Ic7JLoyUI8XFxF2k-cq67dsZhjXKuDae-E71aCVw7PtxNWyVHcPeHgfzwj4y1AbxjqbNdD0ZDdOSMIzNRLV2pT2udbYEQLTl3p0QEL5YO4qUyhX70fhg4pI6gG4VD1LtNRng8r1x6kYs4Il9YaxkjB7aiddRk_6Yyl_uwEK0kXAgIYjlXbHF0OaZrmicAMMr-_QH9Gzq6ETfe6NM9maNlDfpBFCiUWABZ0hxYRsGTje0G_5m91DEX5cNxJQRLc_5UbDi9Tq2x4flp0jRYEYwsj3CcNWkXRvp4wDRfX27Jp_8RHpz7cbLQZ1XwJHBU46-fF5kVObhd09ZfTSe_xeeuLXC7esODpMalPAER1CRnF87vMzYIlHaMHdVeo1maRrbzM8nGPYeFUF3oOqANW5pDXKv7IhpLodgje93gficY0rm9X_85HJtbJ4mHZzHy8xpwx2lX4esXufdXVN1rcoPEKyh2PJPDtvqU6FaOd35QnrL89L2AtPUqs9Z4GWbOIZA4HyW_vOdx=s268-no?authuser=1");
+  background-size: cover;
+  background-color: black;
+}
+.tabla-datos {
+  font-size: 12px;
+}
+.titulo {
+  font-size: 14px;
+}
+
+/* ------------------------------ */
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+::ng-deep .mat-stepper-label-position-bottom .marginSelected {
+  padding-top: 12px !important;
+}
+
+/* ::ng-deep .mat-step-header .redimensionarSelected {
+  border-style: double !important;
+  width: 50px;
+  height: 50px;
+} */
+::ng-deep .mat-step-header .errorIcono {
+  background-color: #d9534f !important;
+}
+::ng-deep .mat-step-header .reprogramadoIcono {
+  background-color: #5bc0de !important;
+}
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #5cb85c;
+  border-style: double !important;
+  width: 50px;
+  height: 50px;
+}
+::ng-deep .mat-step-header .mat-step-icon-state-done {
+  background-color: #17a2b8 !important;
+}
+::ng-deep .mat-step-label-selected .mat-step-label {
+  font-size: 11px !important;
+}
+::ng-deep .mat-step-header .mat-step-label {
+  white-space: break-spaces !important;
+}
+::ng-deep
+  .mat-step-header
+  .mat-stepper-horizontal
+  .mat-stepper-horizontal-line {
+  background-color: #5bc0de;
+  border-top-color: #5bc0de;
+}
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}
+::ng-deep.mat-step-header .mat-step-icon-state-number {
+  background-color: #5bc0de;
+}
